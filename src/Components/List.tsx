@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react';
 import ListItem from './ListItem';
 import '../App.css';
-
-
+import { v4 as uuid } from 'uuid';
 
 export default function List() {
     const [list, setList] = useState<any>([]);
     const [counter, setCounter] = useState(0);
 
     const addNewListItem = () => {
-        setList([...list, <ListItem id={counter} itemToRemove={deleteById} />])
+        setList([...list, <ListItem id={uuid()} itemToRemove={deleteById} />])
         setCounter(counter + 1)
     }
 
@@ -21,12 +20,12 @@ export default function List() {
 
     return (<>
         <div id='list'>
+            <h1>To do</h1>
             <ul>
                 {list.map((item: any) => {
                     return (
                         <li key={item.props.id}>
                             {item}
-                            {/* <button onClick={() => deleteById(item.props.id)}>Delete</button> */}
                         </li>
                     )
                 })}

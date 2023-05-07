@@ -1,5 +1,10 @@
 body {
-    background-color: #c9aa88
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: #c9aa88;
 }
 
 #list {
@@ -9,19 +14,40 @@ body {
     flex-direction: column;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .list-item {
     margin-top: 10px;
+    margin-right: 40px;
+    height: auto;
+    width: 40vw;
+    overflow-wrap: break-word;
 
     color: #365577;
-    font-weight: bolder;
     background-color: #b4895a;
     border: 2px solid #423629;
+    font-weight: bolder;
 }
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.remove-button {}
+
+.edit-button {}
 
 .edit-item {
     visibility: hidden;
+    width: 30vw;
 }
+
 
 .visible {
     visibility: visible;
+    align-self: flex-start;
 }

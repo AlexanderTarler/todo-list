@@ -15,7 +15,7 @@ function ListItem({ id, itemToRemove }: any) {
     const handleKeyDown = (event: any) => {
         if (event.key === 'Enter') {
             setItem(query);
-            inputRef.current!.value = '';
+            setQuery('');
         }
     };
 
@@ -23,7 +23,6 @@ function ListItem({ id, itemToRemove }: any) {
         inputRef.current?.classList.toggle('visible');
         inputRef.current?.focus();
     }
-
 
 
     useEffect(() => {
@@ -35,9 +34,13 @@ function ListItem({ id, itemToRemove }: any) {
             <div>
                 {item}
             </div>
-            <input ref={inputRef} className='edit-item' type="text" onChange={handleChange} onKeyDown={handleKeyDown} />
-            <button onClick={() => editButton()}>Edit</button>
-            <button onClick={() => itemToRemove(id)}>Remove</button>
+
+            <div className='buttons'>
+                <button className='edit-button' onClick={() => editButton()}>Edit</button>
+                <button className='remove-button' onClick={() => itemToRemove(id)}>Remove</button>
+                <input ref={inputRef} className='edit-item' type="text" onChange={handleChange} onKeyDown={handleKeyDown} value={query} />
+
+            </div>
         </li>
     </>
     );
