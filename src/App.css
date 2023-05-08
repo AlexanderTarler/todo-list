@@ -37,17 +37,91 @@ ul {
     align-items: flex-end;
 }
 
-.remove-button {}
-
 .edit-button {}
 
 .edit-item {
-    visibility: hidden;
+    color: #365577;
+    background-color: #b4895a;
+    border: none;
+    font-weight: bolder;
     width: 30vw;
+    outline: none;
+    cursor: default;
+    pointer-events: none;
 }
-
 
 .visible {
     visibility: visible;
     align-self: flex-start;
+}
+
+/* The CSS below is not created by me, I chose to borrow it since I liked the design.
+The source of the code is:
+
+ https://bbbootstrap.com/snippets/delete-button-hover-effect-68431542 
+
+I also copied the "button" element from that page, but modified it to make it my own */
+
+.remove-button {
+    width: 8vw;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    background: #e62222;
+}
+
+.remove-button,
+.remove-button span {
+    transition: 200ms;
+}
+
+.remove-button .text {
+    color: white;
+    font-weight: bold;
+}
+
+.remove-button .icon {
+    position: absolute;
+    height: 40px;
+    width: 8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-button svg {
+    width: 15px;
+    fill: #eee;
+}
+
+.remove-button:hover {
+    background: #ff3636;
+}
+
+.remove-button:hover .text {
+    color: transparent;
+}
+
+button:hover .icon {
+    width: 8vw;
+    border-left: none;
+    visibility: visible;
+}
+
+.icon {
+    visibility: hidden;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active .icon svg {
+    transform: scale(0.8);
 }
