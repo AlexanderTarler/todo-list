@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import ListItem from './ListItem';
-import '../App.css';
+import '../Styling/List.css';
 import { v4 as uuid } from 'uuid';
 
 export default function List() {
@@ -30,7 +30,7 @@ export default function List() {
                     )
                 })}
             </ul>
-            <button onClick={addNewListItem}>Add new list item</button>
+            <button onClick={addNewListItem} id='add-new-list-item-button' data-testid="new-item">New</button>
         </div>
     </>
     );

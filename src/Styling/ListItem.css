@@ -1,79 +1,81 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    background-color: #c9aa88;
-}
-
-#list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-ul {
-    list-style-type: none;
-}
-
 .list-item {
     margin-top: 10px;
     margin-right: 40px;
     height: auto;
     width: 40vw;
+    min-width: 200px;
     overflow-wrap: break-word;
 
-    color: #365577;
-    background-color: #b4895a;
+    background-color: #fed361;
     border: 2px solid #423629;
     font-weight: bolder;
+    box-shadow: 5px 5px 5px #302111;
+}
+
+.list-item-text {
+    position: relative;
+    top: 22px;
+    left: 10px;
+    width: auto;
+    height: auto;
+    border: none;
+    cursor: default;
+    pointer-events: none;
+
+    color: #0374a4;
+    background-color: transparent;
+    font-weight: bolder;
+    font-size: large;
+    outline: none;
 }
 
 .buttons {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: -10px;
 }
 
-.edit-button {}
 
-.edit-item {
-    color: #365577;
-    background-color: #b4895a;
-    border: none;
-    font-weight: bolder;
-    width: 30vw;
-    outline: none;
-    cursor: default;
-    pointer-events: none;
+.edit-button {
+    width: 100px;
+    height: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    font-weight: bold;
+    color: #0b5878;
+    border-color: #0b5878;
+    background-color: #effaf6;
 }
 
-.visible {
-    visibility: visible;
-    align-self: flex-start;
-}
+
+
+
 
 /* The CSS below is not created by me, I chose to borrow it since I liked the design.
 The source of the code is:
 
  https://bbbootstrap.com/snippets/delete-button-hover-effect-68431542 
 
-I also copied the "button" element from that page, but modified it to make it my own */
+I also copied the "button" element from that page, but modified it to make it my own. 
+The @media-CSS is made by me however */
 
 .remove-button {
-    width: 8vw;
-    height: 20px;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100px;
+    height: 20px;
+    cursor: pointer;
+
     background: red;
-    border: none;
+    border: 2px solid rgb(111, 3, 3);
     border-radius: 5px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
-    background: #e62222;
 }
 
 .remove-button,
@@ -82,7 +84,7 @@ I also copied the "button" element from that page, but modified it to make it my
 }
 
 .remove-button .text {
-    color: white;
+    color: #effaf6;
     font-weight: bold;
 }
 
@@ -124,4 +126,18 @@ button:focus {
 
 button:active .icon svg {
     transform: scale(0.8);
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    button {
+        max-width: 50px;
+    }
+
+    .list-item-text {
+        max-width: 100px;
+        font-size: small;
+        word-break: normal;
+    }
 }
