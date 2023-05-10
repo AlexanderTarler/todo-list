@@ -3,10 +3,14 @@ import fetchDataFromAPI from '../Helpers/fetcher';
 import '../Styling/ListItem.css';
 import React from 'react';
 
+
+
 function ListItem({ id, itemToRemove }: any) {
     const [item, setItem] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
 
+    // I have 'any' as a type for my events since typing events
+    // is a bit wonky
     const handleChange = (event: any) => {
         setItem(event.target.value);
     }

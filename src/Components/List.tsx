@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ListItem from './ListItem';
 import '../Styling/List.css';
 import { v4 as uuid } from 'uuid';
 
 export default function List() {
-    const [list, setList] = useState<any>([]);
+    const [list, setList] = useState<JSX.Element[]>([]);
     const [counter, setCounter] = useState(0);
 
     const addNewListItem = () => {
@@ -13,8 +13,8 @@ export default function List() {
     }
 
     const deleteById = (id: number) => {
-        setList((item: any[]) => {
-            return item.filter((item: any) => item.props.id !== id)
+        setList((item: JSX.Element[]) => {
+            return item.filter((item: JSX.Element) => item.props.id !== id)
         })
     }
 
@@ -22,7 +22,7 @@ export default function List() {
         <div id='list'>
             <h1>To do</h1>
             <ul>
-                {list.map((item: any) => {
+                {list.map((item: JSX.Element) => {
                     return (
                         <li key={item.props.id}>
                             {item}
