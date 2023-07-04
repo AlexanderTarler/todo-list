@@ -1,3 +1,6 @@
+This is a simple todo-list that I built using Next.js. The user can add a new task, edit it and delete it. 
+The design is made to be easy on the eyes while keeping the important elements highlighted.
+
 # Using This App
 
 1. Clone this repo to your machine.
